@@ -25,12 +25,33 @@ class ProfileScreen extends StatelessWidget {
             final profile = snapshot.data as Map<String, dynamic>;
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text('Name: ${profile['name']}'),
-                  Text('Email: ${profile['email']}'),
-                  Text('Phone: ${profile['phone']}'),
-                ],
+              child: Center(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        "assets/images/default_profile.jpg",
+                        height: 200,
+                        width: 200,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text('Name: ${profile['name']}'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text('Email: ${profile['email']}'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text('Phone: ${profile['phone']}'),
+                  ],
+                ),
               ),
             );
           }
